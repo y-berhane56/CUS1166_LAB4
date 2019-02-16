@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+  <h2>Welcome!! All the available courses are listed below <b>Click on a course </b></h2>
+  <ul>
+  {% for course in courses %}
+  <li>
+    <b><a href="/register_student/"{{course.title}}</b>
+  </li>
+  {% endfor %}
+  <form action="{{ url_for('add_course') }}" method="post">
+    <input type="text" name="coursenumber" placeholder="Enter Course Number">
+    <input type="text" name="coursetitle" placeholder="Type Courese Title">
+    <button type="Submit"> Send Message</button>
+  </form>
+
+{% endblock %}
